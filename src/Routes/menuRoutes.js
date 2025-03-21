@@ -3,6 +3,7 @@ const express = require('express')
 const menuController = require('../Controller/menuController')
 const moduleController = require('../Controller/moduleController')
 const mainController = require('../Controller/mainController')
+const permissionController = require('../Controller/permissionController')
 
 const router = express.Router()
 
@@ -20,6 +21,9 @@ router.get('/menu', menuController.getMenu)
 router.post('/menu', menuController.addMenu)
 router.put('/menu', menuController.updateMenu)
 router.delete('/menu/:id', menuController.deleteMenu)
+
+// Permission
+router.get('/permission', permissionController.getPermissionListController)
 
 
 module.exports = router
